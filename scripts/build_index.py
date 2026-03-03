@@ -17,9 +17,9 @@ from llama_index.core.node_parser import SentenceSplitter
 
 
 class DashScopeCloudEmbedding(MultiModalEmbedding):
-    def __init__(self, api_key: str, **kwargs):
+    def __init__(self, API_KEY: str, **kwargs):
         super().__init__(**kwargs)
-        dashscope.api_key = api_key
+        dashscope.api_key = API_KEY
 
     def _get_text_embedding(self, text: str) -> List[float]:
         resp = DashScopeMM.call(
@@ -78,7 +78,7 @@ def run_build_index():
 
     # 3. 初始化多模态组件
     embed_model = DashScopeCloudEmbedding(
-        api_key="sk-71edcc7dce2e449f8539fe2d9edfae94")
+        API_KEY="")
     storage_context = StorageContext.from_defaults(
         vector_store=QdrantVectorStore(client=client, collection_name="texts"),
         image_store=QdrantVectorStore(client=client, collection_name="images")

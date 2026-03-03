@@ -42,4 +42,5 @@ def parse_multimodal_pdf(pdf_path, output_dir="extracted_data"):
 
 
 if __name__ == "__main__":
-    parse_multimodal_pdf(r".\jidaoA.pdf")
+    # 可换成 r".\data\2022-2023A.pdf" 测试
+    parse_multimodal_pdf(r".\data\2022-2023A.pdf")

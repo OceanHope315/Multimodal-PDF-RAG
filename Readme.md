@@ -1,4 +1,4 @@
-# Multimodal-PDF-RAG: 基于 Qwen-VL 与 LlamaIndex 的多模态 PDF 问答系统
+# Multimodal-PDF-RAG: 基于 Qwen-VL 与 LlamaIndex 的多模态 PDF 问答系统 （半成品）
 
 这是一个利用多模态大语言模型（MLLM）和向量检索技术，对复杂 PDF（如含有大量公式、图表的试卷）进行精准识别与回答的系统。
 
@@ -20,3 +20,31 @@
 ```bash
 git clone [https://github.com/OceanHope315/Multimodal-PDF-RAG.git](https://github.com/OceanHope315/Multimodal-PDF-RAG.git)
 cd Multimodal-PDF-RAG
+```
+### 2. 安装依赖
+```bash
+pip install -r requirements.txt
+```
+### 3. 配置 API Key
+在buld_index和test(test0)脚本中替换你的阿里云 DashScope API Key：
+```python
+API_KEY = "你的_DASHSCOPE_API_KEY"
+```
+### 4.运行流程
+解析 PDF: 提取图片与文本
+```bash
+python scripts/pdf.py
+```
+构建索引: 向量化并存入 Qdrant
+```bash
+python scripts/build_index.py # 如果无法生成qdrant_db，请手动运行
+```
+开始提问:
+```bash
+python scripts/test.py # 该测试仅上传图片
+(python scripts/test0.py) # 该测试仅上传图片和文本块
+```
+## 输入题目示例
+jidaoA: 请回答SECTION VI的题目 \
+2022-2023A: 请回答第八题 \
+示例输出的结果在output_example中
