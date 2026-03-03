@@ -1,0 +1,8 @@
+llama-index==0.10.0
+qdrant-client
+dashscope
+pymupdf
+easyocr
+torch
+torchvision
+torchaudio
