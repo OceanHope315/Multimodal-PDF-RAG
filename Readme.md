@@ -26,7 +26,7 @@ cd Multimodal-PDF-RAG
 pip install -r requirements.txt
 ```
 ### 3. 配置 API Key
-在buld_index和test(test0)脚本中替换你的阿里云 DashScope API Key：
+在build_index和test(test0)脚本中替换你的阿里云 DashScope API Key：
 ```python
 API_KEY = "你的_DASHSCOPE_API_KEY"
 ```

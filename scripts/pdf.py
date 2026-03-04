@@ -42,5 +42,6 @@ def parse_multimodal_pdf(pdf_path, output_dir="extracted_data"):
 
 
 if __name__ == "__main__":
-    # 可换成 r".\data\2022-2023A.pdf" 测试
-    parse_multimodal_pdf(r".\data\2022-2023A.pdf")
+    parse_multimodal_pdf(r".\data\jidaoA.pdf")
+    # 更换文件后删除之前的 extracted_data 与 qdrant_db 文件夹以避免干扰。
+    # parse_multimodal_pdf(r".\data\2022-2023A.pdf")
